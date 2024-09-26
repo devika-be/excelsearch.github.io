@@ -44,7 +44,7 @@ def translate_marathi_to_english(df):
 
 # Step 1: Upload Marathi Excel files, translate, and ask for property description
 def upload_translate_and_search():
-    st.markdown("<h1 class='title'>Marathi to English Translation and Document Details Search Interface</h1>", unsafe_allow_html=True)
+    st.markdown("<h1 class='title'>STR Document Search Interface</h1>", unsafe_allow_html=True)
 
     # Step to upload Marathi files
     uploaded_files = st.file_uploader("Upload Marathi Excel files", accept_multiple_files=True, type=['xls', 'xlsx'])
