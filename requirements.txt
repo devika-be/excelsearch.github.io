@@ -1,6 +1,6 @@
 streamlit
 pandas
-googletrans==4.0.0-rc1  # Specifying the release candidate version for compatibility
+googletrans==4.0.0-rc1 
 python-docx
 streamlit
 pandas
@@ -15,3 +15,4 @@ fuzzywuzzy
 pandas
 tabulate
 opencv-python-headless
+openpyxl               
