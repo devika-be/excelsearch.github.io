@@ -2,6 +2,8 @@ streamlit
 pandas
 googletrans==4.0.0-rc1  
 openpyxl 
+xlrd                      
+numpy 
 python-docx
 streamlit
 pandas
@@ -13,6 +15,5 @@ pdf2image
 Pillow
 pytesseract
 fuzzywuzzy
-pandas
 tabulate
 opencv-python-headless              
