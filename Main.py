@@ -53,6 +53,9 @@ def upload_translate_and_search():
     if 'translated_dfs' not in st.session_state:
         st.session_state.translated_dfs = []
 
+    # Dictionary to hold file names for downloading
+    file_download_links = {}
+
     if uploaded_files and st.button('Translate'):
         st.session_state.translated_dfs = []  # Clear previous translations
         for uploaded_file in uploaded_files:
@@ -63,10 +66,13 @@ def upload_translate_and_search():
             # Provide an option to download each translated file
             output = f"translated_{uploaded_file.name}"
             translated_df.to_excel(output, index=False)
+            file_download_links[uploaded_file.name] = output  # Store for download links
             st.success(f"File {uploaded_file.name} has been translated.")
-            if st.button(f'Download Translated: {uploaded_file.name}'):
-                with open(output, 'rb') as file:
-                    st.download_button("Download", file, file_name=output)
+
+    # Display download buttons for each translated file
+    for original_filename, translated_filename in file_download_links.items():
+        with open(translated_filename, 'rb') as file:
+            st.download_button("Download Translated: " + original_filename, file, file_name=translated_filename)
 
     # Display property description input
     property_description = st.text_input("Enter Property Description to Search:")
@@ -183,3 +189,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+
